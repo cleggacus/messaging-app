@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 export default (req: any, res: any, next: any) => {
   try {
     const token = req.cookies.jwt;
-    const decoded = jwt.verify(token, "fwh9wyf384fp2q0ffehf2qvhqe80geudhvc");
+    const decoded = jwt.verify(token, process.env.JwtSecret as string);
       
     if (!decoded) {
       res.clearCookie('twitterAccessJwt')

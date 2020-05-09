@@ -5,6 +5,7 @@ interface IProps{
   id: string;
   type: number;
   createdAt: string;
+  seen: boolean;
 }
 
 interface IState{
@@ -24,7 +25,7 @@ class NotificationItem extends React.Component<IProps, IState>{
   }
 
   getUsername(){
-    axios.post('/api/user/getpublic', {id: this.props.id}).then(res => {
+    axios.post('/api/user/getPublic', {id: this.props.id}).then(res => {
       if(res.status == 200){
         this.setState({
           username: res.data.username,
@@ -65,7 +66,7 @@ class NotificationItem extends React.Component<IProps, IState>{
 
   render(){
     return(
-      <div className="notification-item">
+      <div className={this.props.seen ? 'notification-item seen' : 'notification-item'}>
         <div className="notification-item-pic">
           <img src={'/pictures/'+this.state.picture}></img>
         </div>

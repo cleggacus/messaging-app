@@ -190,7 +190,7 @@ export const notify = (idTo: mongoose.Types.ObjectId, idFrom: mongoose.Types.Obj
 }
 
 export const getNotifications = (req: any, res: any, next: any) => {
-  User.find({ _id: req.userData.userId })
+  User.find({ _id: req.userData.userId },)
   .exec()
   .then((user: any) => {
     if (user.length < 1) {
@@ -198,9 +198,17 @@ export const getNotifications = (req: any, res: any, next: any) => {
         mes: "User not found"
       });
     }
-    
-    res.status(200).json({
-      notifications: user[0].notifications
+
+    User.update({ _id: req.userData.userId }, { $set: {'notifications.$[].seen': true }}).exec().then(() => {
+      res.status(200).json({
+        notifications: user[0].notifications.reverse()
+      });
+    })
+    .catch((err: any) => {
+      console.log(err);
+      res.status(500).json({
+        mes: err
+      });
     });
   })
   .catch((err: any) => {

@@ -9,6 +9,10 @@
   align-items: center;
   width: 21%;
 
+  .seen{
+    opacity: 0.6;
+  }
+
   .notification-item{
     display: flex;
     flex-direction: row;

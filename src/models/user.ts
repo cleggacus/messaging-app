@@ -9,7 +9,8 @@ const notificationSchema = mongoose.Schema({
     id: mongoose.Schema.Types.ObjectId,
     type: { type: Number, required: true }, // follow: 0
     extra: { type: String, default: '' },
-    createdAt: {type: Date, default: Date.now}
+    createdAt: {type: Date, default: Date.now},
+    seen: { type: Boolean, default: false }
 })
 
 const userSchema = mongoose.Schema({
