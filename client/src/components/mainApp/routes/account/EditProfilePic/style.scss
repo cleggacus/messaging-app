@@ -1,0 +1,29 @@
+.text-err{
+  color: #a50c16;
+  margin-bottom: 20px;
+  margin-top: 0;
+  display: none;
+}
+
+.pic-select-btn{
+  margin-bottom: 15px !important;
+}
+
+.imgCrop{
+  position: relative;
+  width: 80%;
+  height: 0px;
+  padding-top: 80%;
+  border-radius: 20px;
+  margin-bottom: 30px;
+
+  canvas{
+    position: absolute;
+    top: 0;
+    left: 0
+  }
+}
+
+.pic-file-input{
+  display: none;
+}

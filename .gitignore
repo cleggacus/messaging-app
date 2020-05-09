@@ -1,0 +1,6 @@
+.env
+server.cert
+server.key
+node_modules
+dist
+client/node_modules

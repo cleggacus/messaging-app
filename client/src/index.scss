@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+    
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, button{
+  font-size: 15pt;
+  background-color: var(--secondary-bg);
+  padding: 10px 20px;
+  border-width: 0;
+  border-radius: 50px;
+  font-size: 18pt;
+}
+
+button{
+  cursor: pointer;
+}
+
+*{
+  outline: 0;
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  color: var(--primary-fg);
+  transition: 0.3s ease;
+}
